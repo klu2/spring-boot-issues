@@ -1,0 +1,21 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+ext.springVersion = '4.0.5.RELEASE'
+ext.springBootVersion = '1.1.0.RELEASE'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
+
+description = 'Spring Issues'
+version = '0.1'
+
+subprojects {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "http://repo.spring.io/release" }
+    }
+}
